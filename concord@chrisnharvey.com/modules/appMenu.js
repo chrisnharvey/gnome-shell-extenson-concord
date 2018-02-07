@@ -6,12 +6,12 @@ const Shell          = imports.gi.Shell;
 const WindowTracker  = Shell.WindowTracker.get_default();
 const AppSystem      = Shell.AppSystem.get_default()
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Helpers        = Unite.imports.helpers;
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Helpers        = Concord.imports.helpers;
+const Convenience    = Concord.imports.convenience;
 
 var AppMenu = new Lang.Class({
-  Name: 'Unite.AppMenu',
+  Name: 'Concord.AppMenu',
   _wmHandlerIDs: [],
 
   _init: function() {

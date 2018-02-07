@@ -3,11 +3,11 @@ const GObject        = imports.gi.GObject;
 const Gio            = imports.gi.Gio;
 const Gtk            = imports.gi.Gtk;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var PrefsWidget = new GObject.Class({
-  Name: 'Unite.PrefsWidget',
+  Name: 'Concord.PrefsWidget',
   GTypeName: 'PrefsWidget',
   Extends: Gtk.Box,
 
@@ -15,7 +15,7 @@ var PrefsWidget = new GObject.Class({
     this.parent(params);
 
     this._buildable = new Gtk.Builder();
-    this._buildable.add_from_file(Unite.path + '/settings.ui');
+    this._buildable.add_from_file(Concord.path + '/settings.ui');
 
     let prefsWidget = this._getWidget('prefs_widget');
     this.add(prefsWidget);

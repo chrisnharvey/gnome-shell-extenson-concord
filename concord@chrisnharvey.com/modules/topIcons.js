@@ -8,11 +8,11 @@ const Lang           = imports.lang;
 const PanelMenu      = imports.ui.panelMenu;
 const Panel          = Main.panel;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var TopIcons = new Lang.Class({
-  Name: 'Unite.TopIcons',
+  Name: 'Concord.TopIcons',
   _handlerIDs: [],
   _icons: [],
 

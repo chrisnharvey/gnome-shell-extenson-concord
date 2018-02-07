@@ -2,11 +2,11 @@ const Lang           = imports.lang;
 const Main           = imports.ui.main;
 const Clutter        = imports.gi.Clutter;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var MessageTray = new Lang.Class({
-  Name: 'Unite.MessageTray',
+  Name: 'Concord.MessageTray',
 
   _init: function() {
     this._container = Main.messageTray._bannerBin;

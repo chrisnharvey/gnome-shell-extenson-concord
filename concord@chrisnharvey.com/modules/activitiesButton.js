@@ -1,11 +1,11 @@
 const Lang           = imports.lang;
 const Main           = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var ActivitiesButton = new Lang.Class({
-  Name: 'Unite.ActivitiesButton',
+  Name: 'Concord.ActivitiesButton',
 
   _init: function() {
     this._activities = Main.panel.statusArea.activities;

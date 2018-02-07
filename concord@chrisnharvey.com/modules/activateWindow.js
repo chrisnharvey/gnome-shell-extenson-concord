@@ -1,11 +1,11 @@
 const Lang           = imports.lang;
 const Main           = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var ActivateWindow = new Lang.Class({
-  Name: 'Unite.ActivateWindow',
+  Name: 'Concord.ActivateWindow',
 
   _init: function() {
     this._settings = Convenience.getSettings();

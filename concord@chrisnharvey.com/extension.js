@@ -1,18 +1,18 @@
 const Lang             = imports.lang;
 const Main             = imports.ui.main;
 const ExtensionUtils   = imports.misc.extensionUtils;
-const Unite            = ExtensionUtils.getCurrentExtension();
-const ActivateWindow   = Unite.imports.modules.activateWindow.ActivateWindow;
-const ExtendLeftBox    = Unite.imports.modules.extendLeftBox.ExtendLeftBox;
-const MessageTray      = Unite.imports.modules.messageTray.MessageTray;
-const ActivitiesButton = Unite.imports.modules.activitiesButton.ActivitiesButton;
-const AppMenu          = Unite.imports.modules.appMenu.AppMenu;
-const WindowButtons    = Unite.imports.modules.windowButtons.WindowButtons;
-const WindowDecoration = Unite.imports.modules.windowDecoration.WindowDecoration;
-const TopIcons         = Unite.imports.modules.topIcons.TopIcons;
+const Concord          = ExtensionUtils.getCurrentExtension();
+const ActivateWindow   = Concord.imports.modules.activateWindow.ActivateWindow;
+const ExtendLeftBox    = Concord.imports.modules.extendLeftBox.ExtendLeftBox;
+const MessageTray      = Concord.imports.modules.messageTray.MessageTray;
+const ActivitiesButton = Concord.imports.modules.activitiesButton.ActivitiesButton;
+const AppMenu          = Concord.imports.modules.appMenu.AppMenu;
+const WindowButtons    = Concord.imports.modules.windowButtons.WindowButtons;
+const WindowDecoration = Concord.imports.modules.windowDecoration.WindowDecoration;
+const TopIcons         = Concord.imports.modules.topIcons.TopIcons;
 
-var UniteShell = new Lang.Class({
-  Name: 'Unite',
+var ConcordExtension = new Lang.Class({
+  Name: 'Concord',
 
   _init: function() {
     this._activateWindow   = new ActivateWindow();
@@ -41,13 +41,13 @@ var UniteShell = new Lang.Class({
   }
 });
 
-let uniteShell;
+let concordExtension;
 
 function enable() {
-  uniteShell = new UniteShell();
+  concordExtension = new ConcordExtension();
 };
 
 function disable() {
-  uniteShell.destroy();
-  uniteShell = null;
+  concordExtension.destroy();
+  concordExtension = null;
 };

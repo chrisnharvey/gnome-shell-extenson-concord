@@ -2,13 +2,13 @@ const Gettext        = imports.gettext;
 const Gio            = imports.gi.Gio;
 const Config         = imports.misc.config;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
+const Concord        = ExtensionUtils.getCurrentExtension();
 const GioSSS         = Gio.SettingsSchemaSource;
 
 function initTranslations(domain) {
-  domain = domain || Unite.metadata['gettext-domain'];
+  domain = domain || Concord.metadata['gettext-domain'];
 
-  let localeDir = Unite.dir.get_child('locale');
+  let localeDir = Concord.dir.get_child('locale');
 
   if (localeDir.query_exists(null)) {
     Gettext.bindtextdomain(domain, localeDir.get_path());
@@ -18,9 +18,9 @@ function initTranslations(domain) {
 }
 
 function getSettings(schema) {
-  schema = schema || Unite.metadata['settings-schema'];
+  schema = schema || Concord.metadata['settings-schema'];
 
-  let schemaDir    = Unite.dir.get_child('schemas');
+  let schemaDir    = Concord.dir.get_child('schemas');
   let schemaSource = null;
 
   if (schemaDir.query_exists(null)) {
@@ -32,7 +32,7 @@ function getSettings(schema) {
   let schemaObj = schemaSource.lookup(schema, true);
 
   if (!schemaObj) {
-    let message = 'Schema ' + schema + ' could not be found for extension ' + Unite.metadata.uuid;
+    let message = 'Schema ' + schema + ' could not be found for extension ' + Concord.metadata.uuid;
     throw new Error(message + '. Please check your installation.');
   }
 

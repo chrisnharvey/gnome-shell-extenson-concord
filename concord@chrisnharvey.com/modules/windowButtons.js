@@ -6,13 +6,13 @@ const AppMenu        = Panel.statusArea.appMenu;
 const St             = imports.gi.St;
 const Lang           = imports.lang;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Helpers        = Unite.imports.helpers;
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Helpers        = Concord.imports.helpers;
+const Convenience    = Concord.imports.convenience;
 const MAXIMIZED      = Meta.MaximizeFlags.BOTH;
 
 var WindowButtons = new Lang.Class({
-  Name: 'Unite.WindowButtons',
+  Name: 'Concord.WindowButtons',
   _wmHandlerIDs: [],
   _ovHandlerIDs: [],
 

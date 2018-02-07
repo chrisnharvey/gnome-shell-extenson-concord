@@ -3,11 +3,11 @@ const Lang           = imports.lang;
 const Main           = imports.ui.main;
 const Panel          = Main.panel;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Convenience    = Concord.imports.convenience;
 
 var ExtendLeftBox = new Lang.Class({
-  Name: 'Unite.ExtendLeftBox',
+  Name: 'Concord.ExtendLeftBox',
 
   _init: function() {
     this._settings = Convenience.getSettings();

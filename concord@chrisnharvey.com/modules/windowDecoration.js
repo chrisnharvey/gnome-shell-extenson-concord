@@ -4,13 +4,13 @@ const Mainloop       = imports.mainloop;
 const Util           = imports.misc.util;
 const Lang           = imports.lang;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Unite          = ExtensionUtils.getCurrentExtension();
-const Helpers        = Unite.imports.helpers;
-const Convenience    = Unite.imports.convenience;
+const Concord        = ExtensionUtils.getCurrentExtension();
+const Helpers        = Concord.imports.helpers;
+const Convenience    = Concord.imports.convenience;
 const MAXIMIZED      = Meta.MaximizeFlags.BOTH;
 
 var WindowDecoration = new Lang.Class({
-  Name: 'Unite.WindowDecoration',
+  Name: 'Concord.WindowDecoration',
 
   _init: function() {
     this._settings        = Convenience.getSettings();
@@ -119,7 +119,7 @@ var WindowDecoration = new Lang.Class({
 
       if (fileContent[0] == true) {
         styleContent = fileContent[1].toString();
-        styleContent = styleContent.replace(/@import.*unite@hardpixel\.eu.*css['"]\);\n/g, '');
+        styleContent = styleContent.replace(/@import.*Concord@hardpixel\.eu.*css['"]\);\n/g, '');
       }
     }
 
@@ -129,7 +129,7 @@ var WindowDecoration = new Lang.Class({
   _addUserStyles: function () {
     if (this._buttonsPosition) {
       let styleContent  = this._updateUserStyles();
-      let styleFilePath = Unite.path + '/styles/buttons-' + this._buttonsPosition + '.css';
+      let styleFilePath = Concord.path + '/styles/buttons-' + this._buttonsPosition + '.css';
       let styleImport   = "@import url('" + styleFilePath + "');\n"
 
       GLib.file_set_contents(this._userStylesPath, styleImport + styleContent);
